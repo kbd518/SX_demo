@@ -1,0 +1,22 @@
+form{
+    padding: 10px;
+}
+
+input, select, button{
+    border: 1px solid #ccc; 
+    padding: 6px 3px;
+    border-radius: 3px; /*css3属性IE不支持*/
+}
+
+.info{
+    margin:5px;
+}
+
+#btn_submit{
+    padding:6px 12px;
+    border: none;
+}
+
+#btn_submit:hover{
+    background-color: #81BEF7;
+}
