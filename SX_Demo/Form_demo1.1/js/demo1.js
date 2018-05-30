@@ -3,13 +3,28 @@ window.onload = function () {
     var submit = $("#btn_submit");
     var inputText = $("input");
     var labelText = $("label");
+    var requireFiled = $(".require");
 
-    //生日日历表
     layui.use('laydate', function Calendar(){
         var layDate = layui.laydate;
-
+    
+        //生日日历表
         layDate.render({
             elem: "#input_birthday"
+        });
+        
+        //事件时间表
+        layDate.render({
+            elem: "#start_date",
+            type: "datetime",
+            range: true,
+            btns: ["clear", "now", "confirm"]
+        });
+        layDate.render({
+            elem: "#end_date",
+            type: "datetime",
+            range: true,
+            btns: ["clear", "now", "confirm"]
         })
     });
 
@@ -18,12 +33,12 @@ window.onload = function () {
         layui.use('layer', function Layer() {
             var layer = layui.layer;
 
-            for (var i = 0; i < inputText.length; i++) {
-                if (inputText[i].value == "" | null) {
-                    console.log("fail to submit " + inputText[i].name);
+            for (var i = 0; i < requireFiled.length; i++) {
+                if (requireFiled[i].value == "" | null) {
+                    console.log("fail to submit " + requireFiled[i].name);
                     layer.open({
                         type: 4, //样式，4为tip
-                        content: [inputText[i].parentNode.innerText+"不能为空", inputText[i]], //内容和对象
+                        content: [requireFiled[i].parentNode.innerText+"不能为空", requireFiled[i]], //内容和对象
                         tips: [2, "#F7D358"], //出现位置及背景颜色
                         time: 2000, //时间
                         anim: 6, //动画效果
@@ -32,6 +47,7 @@ window.onload = function () {
                         shade: 0, //关闭提示外背景暗化
                         closeBtn: 0, //关闭按钮
                     });
+                    return false;
                     break;
                 }
             }

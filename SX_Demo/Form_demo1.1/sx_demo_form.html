@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title>开始使用layui</title>
+  <title>Demo</title>
   <link rel="stylesheet" href="../layui/css/layui.css">
   <link rel="stylesheet" href="./css/demo1.css">
   <script src="../layui/layui.js"></script>
@@ -13,33 +13,32 @@
 </head>
 
 <body>
-  <form action="" method="get" id="sx_form" class="layui-form">
+  <div id="sx_form">
     <div class="info" class="layui-form-item">
-      <label class="layui-form-label">身份证:</label>
+      <label class="layui-form-label">证件类型:</label>
       <div class="layui-input-block">
         <input id="input_id" type="number" name="indentity">
       </div>
     </div>
     <div class="info" class="layui-form-item">
-      <label class="layui-form-label">姓名:</label>
+      <label class="layui-form-label">姓&emsp;&emsp;名:</label>
       <div class="layui-input-block">
         <input id="input_name" type="text" name="name">
       </div>
     </div>
-    </div>
     <div class="info" class="layui-form-item">
-      <label class="layui-form-label">年龄:</label>
+      <label class="layui-form-label">年&emsp;&emsp;龄:</label>
       <div class="layui-input-block">
         <input id="input_age" type="number" name="age">
       </div>
     </div>
-    </div>
     <div class="info" class="layui-form-item">
-      <label class="layui-form-label">性别：</label>
+      <label class="layui-form-label">性&emsp;&emsp;别:</label>
       <div class="layui-input-block">
-        <select id="select_gender" lay-filter="gender">
-          <option value="male">男</option>
-          <option value="female">女</option>
+        <select id="select_gender" lay-verify="required">
+          <option value=""></option>
+          <option value="male" value="0">男</option>
+          <option value="female" value="1">女</option>
         </select>
       </div>
     </div>
@@ -55,14 +54,39 @@
         <input id="input_phone" type="number" name="cell_phone">
       </div>
     </div>
-    <div class="layui-form-item">
+    <!-- <div class="layui-form-item">
       <div class="layui-input-block">
-        <button id="btn_submit" class="info" type="button" name="submit">submit</button>
+        <input id="btn_submit" class="info" type="submit">
+      </div>
+    </div> -->
+  </div>
+
+  <div id="event_form">
+    <div class="info" class="layui-form-item">
+      <label class="layui-form-label">事&emsp;&emsp;件</label>
+      <div class="layui-input-block">
+        <input class="require" id="input_event" type="text" name="event">
       </div>
     </div>
-    <!-- <input id="btn_submit" class="info" type="submit" name="submit"> -->
-  </form>
-
+    <div class="info" class="layui-form-item">
+      <label class="layui-form-label">开始时间</label>
+      <div class="layui-input-block">
+        <input class="require" id="start_date" type="text" name="start_date">
+      </div>
+    </div>
+    <div class="info" class="layui-form-item">
+      <label class="layui-form-label">结束时间</label>
+      <div class="layui-input-block">
+        <input class="require" id="end_date" type="text" name="end_date">
+      </div>
+    </div>
+    <div class="layui-form-item">
+      <div class="layui-input-block">
+        <!-- <button id="btn_submit" class="info" type="button" name="submit">submit</button> -->
+        <input class="require" id="btn_submit" class="info" type="submit">
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
